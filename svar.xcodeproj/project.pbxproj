@@ -6,14 +6,19 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E3FC52B02F124A7500DB529E /* FluidAudio in Frameworks */ = {isa = PBXBuildFile; productRef = E3FC52AF2F124A7500DB529E /* FluidAudio */; };
+		E3FC52B32F124A8300DB529E /* KeyboardShortcuts in Frameworks */ = {isa = PBXBuildFile; productRef = E3FC52B22F124A8300DB529E /* KeyboardShortcuts */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
-		E3FC52A02F1249E500DB529E /* swar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3FC52A02F1249E500DB529E /* svar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = svar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		E3FC52A22F1249E500DB529E /* swar */ = {
+		E3FC52A22F1249E500DB529E /* svar */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = swar;
+			path = svar;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -23,6 +28,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3FC52B02F124A7500DB529E /* FluidAudio in Frameworks */,
+				E3FC52B32F124A8300DB529E /* KeyboardShortcuts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,7 +39,7 @@
 		E3FC52972F1249E500DB529E = {
 			isa = PBXGroup;
 			children = (
-				E3FC52A22F1249E500DB529E /* swar */,
+				E3FC52A22F1249E500DB529E /* svar */,
 				E3FC52A12F1249E500DB529E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -40,7 +47,7 @@
 		E3FC52A12F1249E500DB529E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E3FC52A02F1249E500DB529E /* swar.app */,
+				E3FC52A02F1249E500DB529E /* svar.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,10 +55,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E3FC529F2F1249E500DB529E /* swar */ = {
+		E3FC529F2F1249E500DB529E /* svar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E3FC52AB2F1249E600DB529E /* Build configuration list for PBXNativeTarget "swar" */;
+			buildConfigurationList = E3FC52AB2F1249E600DB529E /* Build configuration list for PBXNativeTarget "svar" */;
 			buildPhases = (
+				E3FC52D42F12686500DB529E /* Run Script */,
 				E3FC529C2F1249E500DB529E /* Sources */,
 				E3FC529D2F1249E500DB529E /* Frameworks */,
 				E3FC529E2F1249E500DB529E /* Resources */,
@@ -61,13 +69,15 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				E3FC52A22F1249E500DB529E /* swar */,
+				E3FC52A22F1249E500DB529E /* svar */,
 			);
-			name = swar;
+			name = svar;
 			packageProductDependencies = (
+				E3FC52AF2F124A7500DB529E /* FluidAudio */,
+				E3FC52B22F124A8300DB529E /* KeyboardShortcuts */,
 			);
-			productName = swar;
-			productReference = E3FC52A02F1249E500DB529E /* swar.app */;
+			productName = svar;
+			productReference = E3FC52A02F1249E500DB529E /* svar.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -85,7 +95,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E3FC529B2F1249E500DB529E /* Build configuration list for PBXProject "swar" */;
+			buildConfigurationList = E3FC529B2F1249E500DB529E /* Build configuration list for PBXProject "svar" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -94,12 +104,16 @@
 			);
 			mainGroup = E3FC52972F1249E500DB529E;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E3FC52AE2F124A7500DB529E /* XCRemoteSwiftPackageReference "FluidAudio" */,
+				E3FC52B12F124A8300DB529E /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E3FC52A12F1249E500DB529E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E3FC529F2F1249E500DB529E /* swar */,
+				E3FC529F2F1249E500DB529E /* svar */,
 			);
 		};
 /* End PBXProject section */
@@ -113,6 +127,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E3FC52D42F12686500DB529E /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n  tccutil reset Accessibility com.ubiqapps.svar 2>/dev/null || true\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E3FC529C2F1249E500DB529E /* Sources */ = {
@@ -248,20 +284,26 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = svar/svar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				ENABLE_APP_SANDBOX = YES;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_FILE = svar/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 Rajat Kapoor. All rights reserved.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Svar needs microphone access to transcribe your voice into text.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ubiqapps.swar;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ubiqapps.svar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -278,20 +320,26 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = svar/svar.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				ENABLE_APP_SANDBOX = YES;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_FILE = svar/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2025 Rajat Kapoor. All rights reserved.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Svar needs microphone access to transcribe your voice into text.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ubiqapps.swar;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 0.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ubiqapps.svar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -306,7 +354,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E3FC529B2F1249E500DB529E /* Build configuration list for PBXProject "swar" */ = {
+		E3FC529B2F1249E500DB529E /* Build configuration list for PBXProject "svar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E3FC52A92F1249E600DB529E /* Debug */,
@@ -315,7 +363,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E3FC52AB2F1249E600DB529E /* Build configuration list for PBXNativeTarget "swar" */ = {
+		E3FC52AB2F1249E600DB529E /* Build configuration list for PBXNativeTarget "svar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E3FC52AC2F1249E600DB529E /* Debug */,
@@ -325,6 +373,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E3FC52AE2F124A7500DB529E /* XCRemoteSwiftPackageReference "FluidAudio" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/FluidInference/FluidAudio.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		E3FC52B12F124A8300DB529E /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/KeyboardShortcuts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E3FC52AF2F124A7500DB529E /* FluidAudio */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3FC52AE2F124A7500DB529E /* XCRemoteSwiftPackageReference "FluidAudio" */;
+			productName = FluidAudio;
+		};
+		E3FC52B22F124A8300DB529E /* KeyboardShortcuts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3FC52B12F124A8300DB529E /* XCRemoteSwiftPackageReference "KeyboardShortcuts" */;
+			productName = KeyboardShortcuts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E3FC52982F1249E500DB529E /* Project object */;
 }
