@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Privacy Descriptions -->
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Svar needs microphone access to transcribe your voice into text.</string>
+
+	<!-- Accessibility is requested at runtime via System Preferences, but we document it here -->
+	<!-- Note: Accessibility permission is handled via tccutil and system prompts -->
+
+	<!-- App Behavior -->
+	<key>LSUIElement</key>
+	<true/>
+
+	<!-- App Info -->
+	<key>CFBundleName</key>
+	<string>Svar</string>
+	<key>CFBundleDisplayName</key>
+	<string>Svar</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.1</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+
+	<!-- Minimum macOS Version -->
+	<key>LSMinimumSystemVersion</key>
+	<string>14.0</string>
+
+	<!-- Copyright -->
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2025 Rajat Kapoor. All rights reserved.</string>
+</dict>
+</plist>
