@@ -29,6 +29,7 @@ enum SettingsTab: Int, CaseIterable {
 
 struct GeneralSettingsView: View {
     @StateObject private var appState = AppState.shared
+    @StateObject private var audioDeviceManager = AudioDeviceManager.shared
     @State private var launchAtLogin = false
 
     var body: some View {
@@ -65,6 +66,28 @@ struct GeneralSettingsView: View {
                 }
             }
 
+            Section("Microphone") {
+                Picker("Input device:", selection: $appState.selectedMicrophoneUID) {
+                    Text("System Default").tag("")
+                    ForEach(audioDeviceManager.inputDevices) { device in
+                        Text(device.name).tag(device.uid)
+                    }
+                }
+
+                if !appState.selectedMicrophoneUID.isEmpty {
+                    let selectedDevice = audioDeviceManager.inputDevices.first { $0.uid == appState.selectedMicrophoneUID }
+                    if selectedDevice == nil {
+                        HStack {
+                            Image(systemName: "exclamationmark.triangle.fill")
+                                .foregroundColor(.orange)
+                            Text("Selected device not found. Using system default.")
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                        }
+                    }
+                }
+            }
+
             Section("Startup") {
                 Toggle("Launch at Login", isOn: $launchAtLogin)
                     .onChange(of: launchAtLogin) { _, newValue in
@@ -85,6 +108,11 @@ struct GeneralSettingsView: View {
             }
         }
         .onChange(of: appState.outputMode) { _, _ in
+            Task { @MainActor in
+                appState.saveSettings()
+            }
+        }
+        .onChange(of: appState.selectedMicrophoneUID) { _, _ in
             Task { @MainActor in
                 appState.saveSettings()
             }

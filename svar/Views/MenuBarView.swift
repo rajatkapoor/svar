@@ -9,6 +9,7 @@ struct MenuBarMenuView: View {
     @StateObject private var appState = AppState.shared
     @StateObject private var transcriptionEngine = TranscriptionEngine.shared
     @StateObject private var permissionManager = PermissionManager.shared
+    @StateObject private var audioDeviceManager = AudioDeviceManager.shared
     @Environment(\.openWindow) private var openWindow
 
     var body: some View {
@@ -47,6 +48,37 @@ struct MenuBarMenuView: View {
 
             Divider()
 
+            // Microphone Selection
+            Text("Microphone")
+                .font(.caption)
+                .foregroundColor(.secondary)
+
+            Button {
+                selectMicrophone("")
+            } label: {
+                HStack {
+                    if appState.selectedMicrophoneUID.isEmpty {
+                        Image(systemName: "checkmark")
+                    }
+                    Text("System Default")
+                }
+            }
+
+            ForEach(audioDeviceManager.inputDevices) { device in
+                Button {
+                    selectMicrophone(device.uid)
+                } label: {
+                    HStack {
+                        if appState.selectedMicrophoneUID == device.uid {
+                            Image(systemName: "checkmark")
+                        }
+                        Text(device.name)
+                    }
+                }
+            }
+
+            Divider()
+
             // Status indicator
             HStack {
                 Circle()
@@ -77,6 +109,13 @@ struct MenuBarMenuView: View {
                 // Switch to the selected model
                 await transcriptionEngine.switchModel(model)
             }
+        }
+    }
+
+    private func selectMicrophone(_ uid: String) {
+        Task { @MainActor in
+            appState.selectedMicrophoneUID = uid
+            appState.saveSettings()
         }
     }
 

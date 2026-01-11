@@ -25,6 +25,7 @@ class AppState: ObservableObject {
     @Published var showDictationIndicator: Bool = true
     @Published var dictationIndicatorStyle: DictationIndicatorStyle = .floatingBar
     @Published var isFirstLaunch: Bool = true
+    @Published var selectedMicrophoneUID: String = "" // Empty string = system default
 
     // Word count stats
     @Published var dailyWordsCount: Int = 0
@@ -130,6 +131,9 @@ class AppState: ObservableObject {
            let style = DictationIndicatorStyle(rawValue: styleRaw) {
             dictationIndicatorStyle = style
         }
+        if let micUID = UserDefaults.standard.string(forKey: "selectedMicrophoneUID") {
+            selectedMicrophoneUID = micUID
+        }
 
         // Check if this is first launch
         if UserDefaults.standard.bool(forKey: "hasLaunchedBefore") {
@@ -148,6 +152,7 @@ class AppState: ObservableObject {
         UserDefaults.standard.set(maxHistoryItems, forKey: "maxHistoryItems")
         UserDefaults.standard.set(showDictationIndicator, forKey: "showDictationIndicator")
         UserDefaults.standard.set(dictationIndicatorStyle.rawValue, forKey: "dictationIndicatorStyle")
+        UserDefaults.standard.set(selectedMicrophoneUID, forKey: "selectedMicrophoneUID")
     }
 }
 
